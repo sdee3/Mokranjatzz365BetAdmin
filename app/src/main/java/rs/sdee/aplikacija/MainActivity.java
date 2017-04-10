@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         class addMatch extends AsyncTask<Void,Void,String>{
 
-            ProgressDialog loading;
+            private ProgressDialog loading;
 
             @Override
             protected void onPreExecute() {

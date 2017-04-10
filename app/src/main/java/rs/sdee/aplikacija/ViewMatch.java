@@ -35,7 +35,7 @@ public class ViewMatch extends AppCompatActivity implements View.OnClickListener
     private Button buttonDelete;
 
     private String id;
-    private String liga, utakmica, ki1, kix, ki2, specijal, ug02, ug3p;
+    String liga, utakmica, ki1, kix, ki2, specijal, ug02, ug3p;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -203,7 +203,7 @@ public class ViewMatch extends AppCompatActivity implements View.OnClickListener
     }
     private void deleteMatch(){
         class DeleteMatch extends AsyncTask<Void,Void,String> {
-            ProgressDialog loading;
+            private ProgressDialog loading;
 
             @Override
             protected void onPreExecute() {
@@ -221,8 +221,8 @@ public class ViewMatch extends AppCompatActivity implements View.OnClickListener
             @Override
             protected String doInBackground(Void... params) {
                 RequestHandler rh = new RequestHandler();
-                String s = rh.sendGetRequestParam(Config.URL_DELETE_MATCH, id);
-                return s;
+
+                return rh.sendGetRequestParam(Config.URL_DELETE_MATCH, id);
             }
         }
 

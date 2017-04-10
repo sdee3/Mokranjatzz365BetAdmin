@@ -14,14 +14,14 @@ import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class RequestHandler {
+class RequestHandler {
 
     //Method to send httpPostRequest
     //This method is taking two arguments
     //First argument is the URL of the script to which we will send the request
     //Everything else is a HashMap with name value pairs containing the data to be send with the request
 
-    public String sendPostRequest(String requestURL,
+    String sendPostRequest(String requestURL,
                                   HashMap<String, String> postDataParams) {
         //Creating a URL
         URL url;
@@ -73,7 +73,7 @@ public class RequestHandler {
         return sb.toString();
     }
 
-    public String sendGetRequest(String requestURL){
+    String sendGetRequest(String requestURL){
         StringBuilder sb =new StringBuilder();
         try {
             URL url = new URL(requestURL);
@@ -85,11 +85,12 @@ public class RequestHandler {
                 sb.append(s+"\n");
             }
         }catch(Exception e){
+            e.printStackTrace();
         }
         return sb.toString();
     }
 
-    public String sendGetRequestParam(String requestURL, String id){
+    String sendGetRequestParam(String requestURL, String id){
         StringBuilder sb =new StringBuilder();
         try {
             URL url = new URL(requestURL+id);
@@ -101,6 +102,7 @@ public class RequestHandler {
                 sb.append(s+"\n");
             }
         }catch(Exception e){
+            e.printStackTrace();
         }
         return sb.toString();
     }

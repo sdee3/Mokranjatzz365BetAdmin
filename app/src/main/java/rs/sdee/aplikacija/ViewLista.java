@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.app.WindowDecorActionBar;
-import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -129,8 +127,8 @@ public class ViewLista extends AppCompatActivity implements ListView.OnItemClick
             @Override
             protected String doInBackground(Void... params) {
                 RequestHandler rh = new RequestHandler();
-                String s = rh.sendGetRequest(Config.URL_GET_ALL);
-                return s;
+
+                return rh.sendGetRequest(Config.URL_GET_ALL);
             }
         }
         GetJSON gj = new GetJSON();
