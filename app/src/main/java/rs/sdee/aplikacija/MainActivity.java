@@ -5,17 +5,13 @@ package rs.sdee.aplikacija;
         import android.os.AsyncTask;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
-        import android.support.v7.widget.LinearLayoutManager;
-        import android.support.v7.widget.RecyclerView;
         import android.view.Menu;
         import android.view.View;
         import android.widget.Button;
         import android.widget.EditText;
         import android.widget.Toast;
 
-        import java.util.ArrayList;
         import java.util.HashMap;
-        import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -56,15 +52,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonAdd.setOnClickListener(this);
         buttonView.setOnClickListener(this);
 
-       /* RecyclerView recList = (RecyclerView) findViewById(R.id.);
-        recList.setHasFixedSize(true);
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        recList.setLayoutManager(llm);
-
-        ContactAdapter ca = new ContactAdapter(createList(30));
-        recList.setAdapter(ca);
-        */
     }
 
     @Override
@@ -74,23 +61,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getMenuInflater().inflate(R.menu.menu_activity_main, menu);
         return super.onCreateOptionsMenu(menu);
     }
-
-   /* private List<ContactInfo> createList(int size) {
-
-        List<ContactInfo> result = new ArrayList<ContactInfo>();
-        for (int i=1; i <= size; i++) {
-            ContactInfo ci = new ContactInfo();
-            ci.name = ContactInfo.NAME_PREFIX + i;
-            ci.surname = ContactInfo.SURNAME_PREFIX + i;
-            ci.email = ContactInfo.EMAIL_PREFIX + i + "@test.com";
-
-            result.add(ci);
-
-        }
-
-        return result;
-    } */
-
 
     //Adding a match
     private void addMatch(){
@@ -136,8 +106,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 params.put(Config.KEY_SPECIJAL,specijal);
 
                 RequestHandler rh = new RequestHandler();
-                String res = rh.sendPostRequest(Config.URL_ADD, params);
-                return res;
+
+                return rh.sendPostRequest(Config.URL_ADD, params);
             }
         }
 
