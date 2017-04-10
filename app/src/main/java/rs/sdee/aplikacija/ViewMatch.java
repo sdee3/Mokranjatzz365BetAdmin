@@ -93,7 +93,7 @@ public class ViewMatch extends AppCompatActivity implements View.OnClickListener
 
     private void getUtakmica(){
         class GetUtakmica extends AsyncTask<Void,Void,String>{
-            ProgressDialog loading;
+            private ProgressDialog loading;
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
@@ -110,8 +110,8 @@ public class ViewMatch extends AppCompatActivity implements View.OnClickListener
             @Override
             protected String doInBackground(Void... params) {
                 RequestHandler rh = new RequestHandler();
-                String s = rh.sendGetRequestParam(Config.URL_GET_MATCH,id);
-                return s;
+
+                return rh.sendGetRequestParam(Config.URL_GET_MATCH,id);
             }
         }
         GetUtakmica gu = new GetUtakmica();
@@ -164,7 +164,7 @@ public class ViewMatch extends AppCompatActivity implements View.OnClickListener
 
 
         class UpdateMatch extends AsyncTask<Void,Void,String>{
-            ProgressDialog loading;
+            private ProgressDialog loading;
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
@@ -194,9 +194,7 @@ public class ViewMatch extends AppCompatActivity implements View.OnClickListener
 
                 RequestHandler rh = new RequestHandler();
 
-                String s = rh.sendPostRequest(Config.URL_UPDATE_MATCH,hashMap);
-
-                return s;
+                return rh.sendPostRequest(Config.URL_UPDATE_MATCH,hashMap);
             }
         }
 

@@ -56,8 +56,8 @@ public class ViewLista extends AppCompatActivity implements ListView.OnItemClick
     }
 
     private void showMatch(){
-        JSONObject jsonObject = null;
-        ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
+        JSONObject jsonObject;
+        ArrayList<HashMap<String,String>> list = new ArrayList<>();
         try {
             jsonObject = new JSONObject(JSON_STRING);
             JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
@@ -106,7 +106,7 @@ public class ViewLista extends AppCompatActivity implements ListView.OnItemClick
     private void getJSON(){
         class GetJSON extends AsyncTask<Void,Void,String>{
 
-            ProgressDialog loading;
+            private ProgressDialog loading;
 
             @Override
             protected void onPreExecute() {
