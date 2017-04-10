@@ -141,17 +141,17 @@ public class ViewLista extends AppCompatActivity implements ListView.OnItemClick
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(this, ViewMatch.class);
 
-        HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
+        HashMap<String,String> map = (HashMap)parent.getItemAtPosition(position);
 
-        String liga = map.get(Config.TAG_LIGA.toString());
-        String sifra = map.get(Config.TAG_SIFRA).toString();
-        String utakmica = map.get(Config.TAG_UTAKMICA).toString();
-        String ki1 = map.get(Config.TAG_KI1).toString();
-        String kix = map.get(Config.TAG_KIX).toString();
-        String ki2 = map.get(Config.TAG_KI2).toString();
-        String ug02 = map.get(Config.TAG_UG02).toString();
-        String ug3p = map.get(Config.TAG_UG3P).toString();
-        String specijal = map.get(Config.TAG_SPECIJAL).toString();
+        String liga = map.get(Config.TAG_LIGA);
+        String sifra = map.get(Config.TAG_SIFRA);
+        String utakmica = map.get(Config.TAG_UTAKMICA);
+        String ki1 = map.get(Config.TAG_KI1);
+        String kix = map.get(Config.TAG_KIX);
+        String ki2 = map.get(Config.TAG_KI2);
+        String ug02 = map.get(Config.TAG_UG02);
+        String ug3p = map.get(Config.TAG_UG3P);
+        String specijal = map.get(Config.TAG_SPECIJAL);
 
         intent.putExtra(Config.LIGA,liga);
         intent.putExtra(Config.UTAKMICA,utakmica);
