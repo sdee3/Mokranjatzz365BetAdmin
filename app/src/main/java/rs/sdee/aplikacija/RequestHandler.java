@@ -19,7 +19,7 @@ public class RequestHandler {
     //Method to send httpPostRequest
     //This method is taking two arguments
     //First argument is the URL of the script to which we will send the request
-    //Other is an HashMap with name value pairs containing the data to be send with the request
+    //Everything else is a HashMap with name value pairs containing the data to be send with the request
 
     public String sendPostRequest(String requestURL,
                                   HashMap<String, String> postDataParams) {
@@ -32,7 +32,7 @@ public class RequestHandler {
             //Initializing Url
             url = new URL(requestURL);
 
-            //Creating an httmlurl connection
+            //Creating an httpurl connection
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
             //Configuring connection properties
